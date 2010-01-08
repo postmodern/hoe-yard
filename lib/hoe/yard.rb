@@ -1,6 +1,6 @@
 require 'hoe'
 
-require 'yard'
+gem 'yard'
 
 ##
 # YARD plugin for hoe.
@@ -105,6 +105,8 @@ module Hoe::Yard
   end
 
   def define_yard_tasks
+    require 'yard'
+
     # generate the YARD options
     opts = yard_opts
 
