@@ -85,6 +85,10 @@ module Hoe::Yard
     # generate the YARD options
     opts = normalize_yard_opts
 
+    task :clobber_docs do
+      FileUtils.rm_rf(local_yard_dir)
+    end
+
     # define the yard task
     ::YARD::Rake::YardocTask.new do |t|
       t.files = ['lib/**/*.rb']
