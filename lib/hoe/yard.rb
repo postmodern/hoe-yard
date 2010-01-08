@@ -198,7 +198,7 @@ module Hoe::Yard
       return path if exts.include?(File.extname(path))
     end
 
-    warn "Could not intuitively find the #{name} file"
+    warn "Could not intuitively find the #{name} file" if $DEBUG
     return nil
   end
 
