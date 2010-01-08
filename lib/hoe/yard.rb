@@ -85,6 +85,7 @@ module Hoe::Yard
     # generate the YARD options
     opts = normalize_yard_opts
 
+    desc "Remove YARD products"
     task :clobber_docs do
       rm_rf local_yard_dir
     end
