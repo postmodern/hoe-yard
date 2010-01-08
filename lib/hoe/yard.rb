@@ -27,15 +27,6 @@ module Hoe::Yard
     :rdoc => ['.rdoc']
   }
 
-  # The default YARD template
-  YARD_DEFAULT_TEMPLATE = 'default'
-
-  # The default YARD format
-  YARD_DEFAULT_FORMAT = :html
-
-  # The default return-type for documented methods.
-  YARD_DEFAULT_RETURN_TYPE = 'Object'
-
   # Title for the YARD documentation
   attr_accessor :yard_title
 
