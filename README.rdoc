@@ -9,6 +9,8 @@ A Hoe plugin for generating YARD documentation.
 
 == FEATURES:
 
+* Automatically find the README and History files, irregardless of file
+  extension.
 * Sets +has_rdoc+ to +yard+.
 * Sets +rdoc_options+.
 * Sets +extra_rdoc_files+.
