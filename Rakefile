@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'hoe'
 require 'hoe/signing'
-require './lib/hoe/yard/version.rb'
+require './lib/hoe/yard.rb'
 
 Hoe.spec('hoe-yard') do
   self.version = Hoe::Yard::PLUGIN_VERSION

@@ -11,6 +11,8 @@ gem 'yard'
 # docs::              Generate YARD documentation
 #
 module Hoe::Yard
+  # hoe-yard version
+  PLUGIN_VERSION = '0.1.0'
 
   # Supported markups
   YARD_MARKUP = [:markdown, :texttile, :rdoc]
@@ -94,6 +96,9 @@ module Hoe::Yard
     # add YARD as a development dependency
     yard_version = Gem.loaded_specs['yard'].version
     self.extra_dev_deps << ['yard', ">=#{yard_version}"]
+
+    # add hoe-yard as a development dependency
+    self.extra_dev_deps << ['hoe-yard', ">=#{PLUGIN_VERSION}"]
 
     # we have YARD docs
     self.spec_extras.merge!(:has_rdoc => 'yard')
@@ -246,5 +251,4 @@ module Hoe::Yard
 
     return opts
   end
-
 end unless defined? Hoe::Yard
