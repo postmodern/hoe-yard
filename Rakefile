@@ -15,7 +15,7 @@ Hoe.spec('hoe-yard') do
   self.history_file = 'History.rdoc'
 
   self.extra_deps = [
-    ['yard', '>=0.5.2']
+    ['yard', '>=0.2.3.1']
   ]
 end
 
