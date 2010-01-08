@@ -79,7 +79,7 @@ module Hoe::Yard
     self.yard_return_type = YARD_DEFAULT_RETURN_TYPE
     self.yard_hide_void = false
 
-    self.yard_title = Hoe.normalize_names(self.name).last
+    self.yard_title = Hoe.normalize_names(self.name).last + ' Documentation'
     self.yard_markup = nil
     self.yard_markup_provider = nil
     self.yard_template = YARD_DEFAULT_TEMPLATE
