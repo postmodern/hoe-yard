@@ -36,21 +36,6 @@ module Hoe::Yard
   # The default return-type for documented methods.
   YARD_DEFAULT_RETURN_TYPE = 'Object'
 
-  # Show or don't show protected methods. (default: +false+)
-  attr_accessor :yard_protected
-
-  # Show or don't show private methods. (default: +false+)
-  attr_accessor :yard_private
-
-  # Highlight code in docs as Ruby. (default: +true+)
-  attr_accessor :yard_highlight
-
-  # Shown if method has no return type. (default: +Object+)
-  attr_accessor :yard_return_type
-
-  # Hides return types specified as 'void'. (default: +false+)
-  attr_accessor :yard_hide_void
-
   # Title for the YARD documentation
   attr_accessor :yard_title
 
@@ -62,29 +47,14 @@ module Hoe::Yard
   # (specify the gem name)
   attr_accessor :yard_markup_provider
 
-  # The template to use. (default: +default+)
-  attr_accessor :yard_template
-
-  # The template path to look for templates in.
-  attr_accessor :yard_template_path
-
-  # The output format for the template. (default: +html+)
-  attr_accessor :yard_format
+  # Options to pass to YARD
+  attr_accessor :yard_opts
 
   def initialize_yard
-    self.yard_protected = false
-    self.yard_private = false
-
-    self.yard_highlight = true
-    self.yard_return_type = YARD_DEFAULT_RETURN_TYPE
-    self.yard_hide_void = false
-
     self.yard_title = Hoe.normalize_names(self.name).last + ' Documentation'
     self.yard_markup = nil
     self.yard_markup_provider = nil
-    self.yard_template = YARD_DEFAULT_TEMPLATE
-    self.yard_template_path = nil
-    self.yard_format = YARD_DEFAULT_FORMAT
+    self.yard_opts = []
 
     # find the README.* and History.* files
     self.readme_file = intuit_file_name(File.basename(self.readme_file))
@@ -113,7 +83,7 @@ module Hoe::Yard
     require 'yard'
 
     # generate the YARD options
-    opts = yard_opts
+    opts = normalize_yard_opts
 
     # define the yard task
     ::YARD::Rake::YardocTask.new do |t|
@@ -127,20 +97,6 @@ module Hoe::Yard
   end
 
   protected
-
-  #
-  # Disables showing protected methods in the YARD documentation.
-  #
-  def yard_no_protected!
-    self.yard_protected = false
-  end
-
-  #
-  # Disables showing private methods in the YARD documentation.
-  #
-  def yard_no_private!
-    self.yard_private = false
-  end
 
   #
   # Alias to <tt>Hoe#extra_rdoc_files</tt>.
@@ -213,19 +169,8 @@ module Hoe::Yard
   # Generates the minimal amount of YARD options based on the YARD
   # settings.
   #
-  def yard_opts
-    opts = ['--title', self.yard_title]
-
-    opts << '--protected' if self.yard_protected
-    opts << '--private' if self.yard_private
-
-    opts << '--no-highlight' unless self.yard_highlight
-
-    unless self.yard_return_type == YARD_DEFAULT_RETURN_TYPE
-      opts += ['--default-return', self.yard_return_type]
-    end
-
-    opts << '--hide-void-return' if self.yard_hide_void
+  def normalize_yard_opts
+    opts = self.yard_opts + ['--title', self.yard_title]
 
     if self.yard_markup
       opts += ['--markup', self.yard_markup]
@@ -235,19 +180,9 @@ module Hoe::Yard
       opts += ['--markup-provider', self.yard_markup_provider]
     end
 
-    unless self.yard_template == YARD_DEFAULT_TEMPLATE
-      opts += ['--template', self.yard_template]
+    unless (opts.include?('--quiet') || opts.include?('--verbose') || $DEBUG)
+      opts += ['--quiet']
     end
-
-    if self.yard_template_path
-      opts += ['--template-path', self.yard_template_path]
-    end
-
-    unless self.yard_format == YARD_DEFAULT_FORMAT
-      opts += ['--format', self.yard_format]
-    end
-
-    opts << '--quiet' unless $DEBUG
 
     return opts
   end
