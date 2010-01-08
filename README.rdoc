@@ -37,7 +37,7 @@ A Hoe plugin for generating YARD documentation.
 
     self.yard_title = 'My Project'
     self.yard_markup = :markdown
-    self.yard_protected = true
+    self.yard_opts = ['--protected']
 
     # ...
   end
