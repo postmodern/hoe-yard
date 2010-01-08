@@ -5,6 +5,8 @@ require 'hoe'
 require 'hoe/signing'
 require './lib/hoe/yard.rb'
 
+Hoe.plugin :yard
+
 Hoe.spec('hoe-yard') do
   self.version = Hoe::Yard::PLUGIN_VERSION
   self.developer('Postmodern', 'postmodern.mod3@gmail.com')
