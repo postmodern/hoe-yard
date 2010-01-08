@@ -7,6 +7,10 @@
 
 A Hoe plugin for generating YARD documentation.
 
+Using the Hoe YARD plugin, you can generate YARD documentation instantly.
+Additionally, any resulting RubyGems will be properly configured to
+automatically generate YARD documentation upon installation.
+
 == FEATURES:
 
 * Automatically find the README and History files, irregardless of file
