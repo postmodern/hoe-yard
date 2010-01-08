@@ -7,11 +7,12 @@
 
 A Hoe plugin for generating YARD documentation.
 
-== FEATURES/PROBLEMS:
+== FEATURES:
 
 * Sets +has_rdoc+ to +yard+.
 * Sets +rdoc_options+.
 * Sets +extra_rdoc_files+.
+* Adds YARD and hoe-yard as development dependencies.
 * Configures the YARD task.
 
 == REQUIREMENTS:
