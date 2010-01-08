@@ -23,7 +23,7 @@ A Hoe plugin for generating YARD documentation.
 
   $ sudo gem install hoe-yard
 
-== USEAGE:
+== USAGE:
 
   require 'rubygems'
   require 'hoe'
