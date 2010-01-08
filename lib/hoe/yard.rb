@@ -86,7 +86,7 @@ module Hoe::Yard
     opts = normalize_yard_opts
 
     task :clobber_docs do
-      FileUtils.rm_rf(local_yard_dir)
+      rm_rf local_yard_dir
     end
 
     # define the yard task
