@@ -240,6 +240,8 @@ module Hoe::Yard
       opts += ['--format', self.yard_format]
     end
 
+    opts << '--quiet' unless $DEBUG
+
     return opts
   end
 
