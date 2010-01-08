@@ -5,7 +5,7 @@
 
 == DESCRIPTION:
 
-A Hoe plugin for properly configuring and using the YARD documentation tool.
+A Hoe plugin for generating YARD documentation.
 
 == FEATURES/PROBLEMS:
 
