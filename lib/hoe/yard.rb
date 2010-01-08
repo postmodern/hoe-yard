@@ -78,7 +78,7 @@ module Hoe::Yard
 
     desc "Remove YARD products"
     task :clobber_docs do
-      rm_rf local_yard_dir
+      rm_r local_yard_dir
     end
 
     # define the yard task
