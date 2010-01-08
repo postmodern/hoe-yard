@@ -3,9 +3,10 @@
 require 'rubygems'
 require 'hoe'
 require 'hoe/signing'
+require './lib/hoe/yard/version.rb'
 
 Hoe.spec('hoe-yard') do
-  self.version = '0.1.0'
+  self.version = Hoe::Yard::PLUGIN_VERSION
   self.developer('Postmodern', 'postmodern.mod3@gmail.com')
 
   self.readme_file = 'README.rdoc'
