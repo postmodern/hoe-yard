@@ -28,9 +28,6 @@ module Hoe::Yard
   # The default YARD template
   YARD_DEFAULT_TEMPLATE = 'default'
 
-  # The default YARD markup
-  YARD_DEFAULT_MARKUP = :rdoc
-
   # The default YARD format
   YARD_DEFAULT_FORMAT = :html
 
@@ -81,7 +78,7 @@ module Hoe::Yard
     self.yard_hide_void = false
 
     self.yard_title = Hoe.normalize_names(self.name).last
-    self.yard_markup = YARD_DEFAULT_MARKUP
+    self.yard_markup = nil
     self.yard_markup_provider = nil
     self.yard_template = YARD_DEFAULT_TEMPLATE
     self.yard_template_path = nil
@@ -188,16 +185,17 @@ module Hoe::Yard
     name = name.gsub(/\.[^\.]+$/,'')
     paths = Dir["#{name}.*"]
 
-    paths.each do |path|
-      if YARD_EXTS[self.yard_markup].include?(File.extname(path))
-        return path
-      end
-    end
+    exts = if self.yard_markup
+             YARD_EXTS[self.yard_markup]
+           else
+             YARD_EXTS.values.flatten.uniq
+           end
+
+    # append the other raw extensions
+    exts += YARD_RAW_EXTS
 
     paths.each do |path|
-      if YARD_RAW_EXTS.include?(File.extname(path))
-        return path
-      end
+      return path if exts.include?(File.extname(path))
     end
 
     warn "Could not intuitively find the #{name} file"
@@ -222,7 +220,7 @@ module Hoe::Yard
 
     opts << '--hide-void-return' if self.yard_hide_void
 
-    unless self.yard_markup == YARD_DEFAULT_MARKUP
+    if self.yard_markup
       opts += ['--markup', self.yard_markup]
     end
 
