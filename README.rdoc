@@ -16,7 +16,7 @@ A Hoe plugin for generating YARD documentation.
 
 == REQUIREMENTS:
 
-* [yard]{http://yardoc.org/} >= 0.5.2
+* {yard}[http://yardoc.org/] >= 0.5.2
 
 == INSTALL:
 
