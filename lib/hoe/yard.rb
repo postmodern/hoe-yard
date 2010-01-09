@@ -83,7 +83,7 @@ module Hoe::Yard
 
     # define the yard task
     ::YARD::Rake::YardocTask.new do |t|
-      t.files = ['lib/**/*.rb']
+      t.files = self.spec.files.select { |path| path =~ /^lib\/.+\.rb$/ }
       t.options = opts + ['--files'] + self.yard_files
     end
     task :docs => :yard
