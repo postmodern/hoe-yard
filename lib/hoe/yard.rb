@@ -12,7 +12,7 @@ gem 'yard'
 #
 module Hoe::Yard
   # hoe-yard version
-  PLUGIN_VERSION = '0.1.0'
+  PLUGIN_VERSION = '0.1.1'
 
   # Supported markups
   YARD_MARKUP = [:markdown, :texttile, :rdoc]
