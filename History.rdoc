@@ -1,5 +1,7 @@
 === 0.1.1 / 2010-01-10
 
+* Only add hoe-yard as a development dependency, if we're not in the
+  hoe-yard gem.
 * Have the +yard+ task generate documentation only for the files listed in
   Manifest.txt.
 * Have the +clobber_docs+ task call +rm_r+ when cleaning the <tt>docs/</tt>
