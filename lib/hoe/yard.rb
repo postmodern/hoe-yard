@@ -58,8 +58,10 @@ module Hoe::Yard
     yard_version = Gem.loaded_specs['yard'].version
     self.extra_dev_deps << ['yard', ">=#{yard_version}"]
 
-    # add hoe-yard as a development dependency
-    self.extra_dev_deps << ['hoe-yard', ">=#{PLUGIN_VERSION}"]
+    unless self.name == 'hoe-yard'
+      # add hoe-yard as a development dependency
+      self.extra_dev_deps << ['hoe-yard', ">=#{PLUGIN_VERSION}"]
+    end
 
     # we have YARD docs
     self.spec_extras.merge!(:has_rdoc => 'yard')
