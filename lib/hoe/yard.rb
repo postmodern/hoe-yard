@@ -78,7 +78,9 @@ module Hoe::Yard
 
     desc "Remove YARD products"
     task :clobber_docs do
-      rm_r local_yard_dir
+      if File.exists?(local_yard_dir)
+        rm_r local_yard_dir, :verbose => true
+      end
     end
 
     # define the yard task
