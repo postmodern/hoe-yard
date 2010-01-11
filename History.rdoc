@@ -1,3 +1,10 @@
+=== 0.1.1 / 2010-01-10
+
+* Have the +yard+ task generate documentation only for the files listed in
+  Manifest.txt.
+* Have the +clobber_docs+ task call +rm_r+ when cleaning the <tt>docs/</tt>
+  directory.
+
 === 0.1.0 / 2010-01-08
 
 * Initial release:
