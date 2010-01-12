@@ -11,8 +11,8 @@ Hoe.spec('hoe-yard') do
   self.version = Hoe::Yard::PLUGIN_VERSION
   self.developer('Postmodern', 'postmodern.mod3@gmail.com')
 
+  self.yard_options = ['--protected']
   self.remote_yard_dir = '/'
-  self.yard_opts = ['--protected']
 
   self.extra_deps = [
     ['yard', '>=0.2.3.1']
