@@ -39,13 +39,13 @@ module Hoe::Yard
   attr_accessor :yard_markup_provider
 
   # Options to pass to YARD
-  attr_accessor :yard_opts
+  attr_accessor :yard_options
 
   def initialize_yard
     self.yard_title = Hoe.normalize_names(self.name).last + ' Documentation'
     self.yard_markup = nil
     self.yard_markup_provider = nil
-    self.yard_opts = []
+    self.yard_options = []
 
     # find the README.* and History.* files
     self.readme_file = intuit_file_name(File.basename(self.readme_file))
@@ -97,6 +97,24 @@ module Hoe::Yard
   end
 
   protected
+
+  #
+  # Alias to +yard_options+.
+  #
+  # @deprecated Use +yard_options+ instead.
+  #
+  def yard_opts
+    self.yard_options
+  end
+
+  #
+  # Alias to +yard_options=+.
+  #
+  # @deprecated Use +yard_options=+ instead.
+  #
+  def yard_opts=(new_opts)
+    self.yard_options = new_opts
+  end
 
   #
   # Alias to <tt>Hoe#extra_rdoc_files</tt>.
