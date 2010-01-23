@@ -54,10 +54,6 @@ module Hoe::Yard
     # disable RDoc and ri tasks
     self.need_rdoc = false
 
-    # add YARD as a development dependency
-    yard_version = Gem.loaded_specs['yard'].version
-    self.extra_dev_deps << ['yard', ">=#{yard_version}"]
-
     unless self.name == 'hoe-yard'
       # add hoe-yard as a development dependency
       self.extra_dev_deps << ['hoe-yard', ">=#{PLUGIN_VERSION}"]

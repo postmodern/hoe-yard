@@ -19,7 +19,7 @@ to automatically generate YARD documentation upon installation.
 * Sets +has_rdoc+ to +yard+.
 * Sets +rdoc_options+.
 * Sets +extra_rdoc_files+.
-* Adds YARD and hoe-yard as development dependencies.
+* Adds hoe-yard as a development dependency.
 * Adds the +yard+ and +docs+ Rake tasks.
 
 == REQUIREMENTS:
