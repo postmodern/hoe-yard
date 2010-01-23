@@ -1,3 +1,9 @@
+=== 0.1.2 / 2010-01-22
+
+* Renamed +yard_opts+ to +yard_options+.
+* No longer automatically add +yard+ to the development dependencies
+  of a Hoe project.
+
 === 0.1.1 / 2010-01-10
 
 * Only add hoe-yard as a development dependency, if we're not in the
