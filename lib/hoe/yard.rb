@@ -5,10 +5,10 @@ gem 'yard'
 ##
 # YARD plugin for hoe.
 #
-# === Tasks Provided:
+# ### Tasks Provided:
 #
-# yard::              Generate YARD documentation
-# docs::              Generate YARD documentation
+# * yard: Generate YARD documentation
+# * docs: Generate YARD documentation
 #
 module Hoe::Yard
   # hoe-yard version
@@ -31,7 +31,7 @@ module Hoe::Yard
   attr_accessor :yard_title
 
   # Markup style used in documentation, like textile, markdown or rdoc.
-  # (default: +:rdoc+)
+  # (default: `:rdoc`)
   attr_accessor :yard_markup
 
   # Overrides the library used to process markup formatting
@@ -95,60 +95,60 @@ module Hoe::Yard
   protected
 
   #
-  # Alias to +yard_options+.
+  # Alias to `yard_options`.
   #
-  # @deprecated Use +yard_options+ instead.
+  # @deprecated Use `yard_options` instead.
   #
   def yard_opts
     self.yard_options
   end
 
   #
-  # Alias to +yard_options=+.
+  # Alias to `yard_options=`.
   #
-  # @deprecated Use +yard_options=+ instead.
+  # @deprecated Use `yard_options=` instead.
   #
   def yard_opts=(new_opts)
     self.yard_options = new_opts
   end
 
   #
-  # Alias to <tt>Hoe#extra_rdoc_files</tt>.
+  # Alias to `Hoe#extra_rdoc_files`.
   #
   def yard_files
     self.extra_rdoc_files
   end
 
   #
-  # Alias to <tt>Hoe#extra_rdoc_files=</tt>.
+  # Alias to `Hoe#extra_rdoc_files=`.
   #
   def yard_files=(new_files)
     self.extra_rdoc_files = new_files
   end
 
   #
-  # Alias to <tt>Hoe#local_rdoc_dir</tt>.
+  # Alias to `Hoe#local_rdoc_dir`.
   #
   def local_yard_dir
     self.local_rdoc_dir
   end
 
   #
-  # Alias to <tt>Hoe#local_yard_dir=</tt>.
+  # Alias to `Hoe#local_yard_dir=`.
   #
   def local_yard_dir=(new_dir)
     self.local_rdoc_dir = new_dir
   end
 
   #
-  # Alias to <tt>Hoe#remote_rdoc_dir</tt>.
+  # Alias to `Hoe#remote_rdoc_dir`.
   #
   def remote_yard_dir
     self.remote_rdoc_dir
   end
 
   #
-  # Alias to <tt>Hoe#remote_rdoc_dir=</tt>.
+  # Alias to `Hoe#remote_rdoc_dir=`.
   #
   def remote_yard_dir=(new_dir)
     self.remote_rdoc_dir = new_dir

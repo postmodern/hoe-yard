@@ -1,10 +1,10 @@
-= hoe-yard
+# hoe-yard
 
-* http://github.com/postmodern/hoe-yard
-* http://github.com/postmodern/hoe-yard/issues
+* [github.com/postmodern/hoe-yard](http://github.com/postmodern/hoe-yard/)
+* [github.com/postmodern/hoe-yard/issues](http://github.com/postmodern/hoe-yard/issues)
 * Postmodern (postmodern.mod3 at gmail.com)
 
-== DESCRIPTION:
+## DESCRIPTION:
 
 A Hoe plugin for generating YARD documentation.
 
@@ -12,42 +12,42 @@ Using the Hoe YARD plugin, projects can begin generating YARD documentation
 instantly. Additionally, any resulting RubyGems will be properly configured
 to automatically generate YARD documentation upon installation.
 
-== FEATURES:
+## FEATURES:
 
 * Automatically find the README and History files, irregardless of file
   extension.
-* Sets +has_rdoc+ to +yard+.
-* Sets +rdoc_options+.
-* Sets +extra_rdoc_files+.
+* Sets `has_rdoc` to `yard`.
+* Sets `rdoc_options`.
+* Sets `extra_rdoc_files`.
 * Adds hoe-yard as a development dependency.
-* Adds the +yard+ and +docs+ Rake tasks.
+* Adds the `yard` and `docs` Rake tasks.
 
-== REQUIREMENTS:
+## REQUIREMENTS:
 
-* {yard}[http://yardoc.org/] >= 0.2.3.1
+* [yard](http://yardoc.org/) >= 0.2.3.1
 
-== INSTALL:
+## INSTALL:
 
-  $ sudo gem install hoe-yard
+    $ sudo gem install hoe-yard
 
-== USAGE:
+## USAGE:
 
-  require 'rubygems'
-  require 'hoe'
+    require 'rubygems'
+    require 'hoe'
 
-  Hoe.plugin :yard
+    Hoe.plugin :yard
 
-  Hoe.spec('my_project') do
-    # ...
+    Hoe.spec('my_project') do
+      # ...
 
-    self.yard_title = 'My Project'
-    self.yard_markup = :markdown
-    self.yard_opts = ['--protected']
+      self.yard_title = 'My Project'
+      self.yard_markup = :markdown
+      self.yard_opts = ['--protected']
 
-    # ...
-  end
+      # ...
+    end
 
-== LICENSE:
+## LICENSE:
 
 (The MIT License)
 
