@@ -1,7 +1,7 @@
 # hoe-yard
 
-* [github.com/postmodern/hoe-yard](http://github.com/postmodern/hoe-yard/)
-* [github.com/postmodern/hoe-yard/issues](http://github.com/postmodern/hoe-yard/issues)
+* http://github.com/postmodern/hoe-yard/
+* http://github.com/postmodern/hoe-yard/issues
 * Postmodern (postmodern.mod3 at gmail.com)
 
 ## DESCRIPTION:
