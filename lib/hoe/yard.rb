@@ -15,7 +15,7 @@ module Hoe::Yard
   PLUGIN_VERSION = '0.1.3'
 
   # Supported markups
-  YARD_MARKUP = [:markdown, :texttile, :rdoc,:asciidoc]
+  YARD_MARKUP = [:markdown, :texttile, :rdoc, :asciidoc]
 
   # File extensions indicating raw content
   YARD_RAW_EXTS = ['.txt', '.html']
