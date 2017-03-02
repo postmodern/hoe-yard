@@ -42,6 +42,9 @@ module Hoe::Yard
   # Options to pass to YARD
   attr_accessor :yard_options
 
+  #
+  # Initializes the hoe-yard plugin.
+  #
   def initialize_yard
     self.yard_title = Hoe.normalize_names(self.name).last + ' Documentation'
     self.yard_markup = nil
@@ -69,6 +72,9 @@ module Hoe::Yard
     end
   end
 
+  #
+  # Defines additional rake tasks.
+  #
   def define_yard_tasks
     require 'yard'
 
@@ -116,12 +122,20 @@ module Hoe::Yard
   #
   # Alias to `Hoe#extra_rdoc_files`.
   #
+  # @return [Array<String>]
+  #   Additional files to include in the generated documentation.
+  #
   def yard_files
     self.extra_rdoc_files
   end
 
   #
   # Alias to `Hoe#extra_rdoc_files=`.
+  #
+  # @param [Array<String>] new_files
+  #   Additional files to include in the generated documentation.
+  #
+  # @return [Array<String>]
   #
   def yard_files=(new_files)
     self.extra_rdoc_files = new_files
@@ -130,12 +144,20 @@ module Hoe::Yard
   #
   # Alias to `Hoe#local_rdoc_dir`.
   #
+  # @return [String]
+  #   Relative path to the locally generated documentation directory.
+  #
   def local_yard_dir
     self.local_rdoc_dir
   end
 
   #
   # Alias to `Hoe#local_yard_dir=`.
+  #
+  # @param [String] new_dir
+  #   New relative path to the locally generated documentation directory.
+  #
+  # @return [String]
   #
   def local_yard_dir=(new_dir)
     self.local_rdoc_dir = new_dir
@@ -144,12 +166,20 @@ module Hoe::Yard
   #
   # Alias to `Hoe#remote_rdoc_dir`.
   #
+  # @return [String]
+  #   Relative path to the desired remote documentation directory.
+  #
   def remote_yard_dir
     self.remote_rdoc_dir
   end
 
   #
   # Alias to `Hoe#remote_rdoc_dir=`.
+  #
+  # @param [String] new_dir
+  #   New relative path to the desired remote documentation directory.
+  #
+  # @return [String]
   #
   def remote_yard_dir=(new_dir)
     self.remote_rdoc_dir = new_dir
@@ -158,6 +188,13 @@ module Hoe::Yard
   #
   # Intuitively finds the file with the given _name_, using the current
   # YARD markup setting to guess the file extension.
+  #
+  # @param [String] name
+  #   The given file name.
+  #
+  # @return [String]
+  #   The file sharing the same name, but ending with the appropriate markup
+  #   file extension.
   #
   def intuit_file_name(name)
     name = name.gsub(/\.[^\.]+$/,'')
@@ -183,6 +220,8 @@ module Hoe::Yard
   #
   # Generates the minimal amount of YARD options based on the YARD
   # settings.
+  #
+  # @return [Array<String>]
   #
   def normalize_yard_opts
     opts = self.yard_opts.dup
