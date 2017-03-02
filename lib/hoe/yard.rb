@@ -185,18 +185,19 @@ module Hoe::Yard
   # settings.
   #
   def normalize_yard_opts
-    opts = self.yard_opts + ['--title', self.yard_title]
+    opts = self.yard_opts.dup
+    opts << '--title' << self.yard_title
 
     if self.yard_markup
-      opts += ['--markup', self.yard_markup]
+      opts << '--markup' << self.yard_markup
     end
 
     if self.yard_markup_provider
-      opts += ['--markup-provider', self.yard_markup_provider]
+      opts << '--markup-provider' << self.yard_markup_provider
     end
 
     unless (opts.include?('--quiet') || opts.include?('--verbose') || $DEBUG)
-      opts += ['--quiet']
+      opts << '--quiet'
     end
 
     return opts
