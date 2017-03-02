@@ -72,15 +72,15 @@ module Hoe::Yard
   def define_yard_tasks
     require 'yard'
 
-    # generate the YARD options
-    opts = normalize_yard_opts
-
     desc "Remove YARD products"
     task :clobber_docs do
       if File.exists?(local_yard_dir)
         rm_r local_yard_dir, :verbose => true
       end
     end
+
+    # generate the YARD options
+    opts = normalize_yard_opts
 
     # define the yard task
     ::YARD::Rake::YardocTask.new do |t|
