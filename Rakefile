@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'hoe'
 require 'hoe/signing'
-require './lib/hoe/yard.rb'
+$LOAD_PATH.unshift(File.expand_path('../lib',__FILE__))
 
 Hoe.plugin :yard
 
