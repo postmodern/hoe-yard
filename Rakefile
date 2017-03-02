@@ -9,7 +9,7 @@ Hoe.plugin :yard
 
 Hoe.spec('hoe-yard') do
   self.version = Hoe::Yard::PLUGIN_VERSION
-  self.developer('Postmodern', 'postmodern.mod3@gmail.com')
+  self.developer 'Postmodern', 'postmodern.mod3@gmail.com'
 
   self.yard_options = ['--markup', 'markdown', '--protected']
   self.remote_yard_dir = '/'
