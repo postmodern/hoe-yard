@@ -16,7 +16,7 @@ Hoe.spec('hoe-yard') do
   self.remote_yard_dir = '/'
 
   self.extra_deps = [
-    ['yard', '>=0.2.3.1']
+    ['yard', '~> 0.8']
   ]
 end
 
